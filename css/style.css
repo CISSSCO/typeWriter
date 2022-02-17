@@ -7,7 +7,7 @@
 
 body {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     min-height: 90vh;
     margin: 0;
@@ -15,7 +15,29 @@ body {
     color: var(--secondaryColor);
 }
 
+#main {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    
+    align-items: center;
+
+}
+
+#options {
+    margin: 0 2px;
+    padding: 0 2px;
+}
+
+span {
+    font-size: 1em;
+}
+
 #container {
+    display: flex;
     margin: 5px auto;
     padding: 10px;
     /* border: 2px solid red; */
@@ -26,17 +48,20 @@ body {
 }
 
 .text {
-    color: greenyellow;
+    color: var(--secondaryColor);
+    font-size: 1.5rem;
     border: 2px solid red;
     padding: 10px;
     border-radius: 1rem;
     margin-bottom: 1rem;
+    max-width: 1000px;
     text-align: center;
     /* margin-left: calc(1rem + 2px);
     margin-right: calc(1rem + 2px); */
 }
 
 .textarea {
+    /* display: none; */
     background-color: transparent;
     border: 2px solid green;
     /* resize: none; */
@@ -45,7 +70,7 @@ body {
     padding: .5rem 1rem;
     font-size: 1rem;
     outline: none;
-    width: 100%;
+    width: 300px;
     text-align: center;
     border-radius: 1rem;
     height: 4rem;
@@ -53,4 +78,19 @@ body {
 
 .textarea:focus {
     border-color: yellowgreen;
+}
+
+.correct {
+    background: yellow;
+    color: black;
+}
+
+.wrong {
+    background: red;
+    color: black;
+}
+
+.current {
+    color: black;
+    background-color: grey;
 }
