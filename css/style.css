@@ -90,7 +90,15 @@ span {
     color: black;
 }
 
-.current {
+.cursor {
     color: black;
-    background-color: grey;
+    background-color: orange;
+}
+
+#timer {
+    font-size: 4rem;
+    color: yellow;
+    font-weight: 900;
+    text-align: center;
+
 }
