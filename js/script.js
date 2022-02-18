@@ -5,23 +5,28 @@ let inputArea = document.getElementById('textArea')
 let startTime
 let endTime = null;
 
+let countWords = 0
+let prevWordTyped = 0
+let noOfchar = 0
+
 const keyListener = inputArea.addEventListener('input', () => {
 
-    //starting time just after a key is pressed
-
+    countWords++
+    if(countWords === 1){
+        startTimer()
+    }
+    
     const arrayQuote = displayQuoteInParagraph.querySelectorAll('span')
     const arrayValue = inputArea.value.split('')
-    
 
-    let noOfchar= 0;
-    let correct = true;
+    let end = true;
     arrayQuote.forEach((span, index) => {
         noOfchar++;
         const char1 = arrayValue[index]
         if(char1 == null){
             span.classList.remove('correct')
             span.classList.remove('wrong')
-            correct = false;
+            end = false;
         }
         else if(char1 === span.innerText){
             span.classList.add('correct')
@@ -32,9 +37,11 @@ const keyListener = inputArea.addEventListener('input', () => {
             span.classList.remove('correct')
         }
     })
-    if(correct) {
+    if(end) {
         
         start();
+        prevWordTyped = countWords
+        countWords = 0
         
     }
 })
@@ -49,6 +56,8 @@ function getQuote() {
 
 
 async function start() {
+    noOfchar = 0
+    timer.innerText = 0
     let quote = await getQuote()
     displayQuoteInParagraph.innerHTML = ''
     // displayQuoteInParagraph.innerText = quote
@@ -56,11 +65,11 @@ async function start() {
         const span = document.createElement('span')
         span.innerText = character
         displayQuoteInParagraph.appendChild(span)
+        noOfchar++;
     })
 
     inputArea.value = null
     
-    startTimer()
 
     
     
@@ -69,7 +78,9 @@ async function start() {
 
 
 function startTimer(){
+ 
     timer.innerText = 0
+
     startTime = new Date();
     setInterval(() => {
 
@@ -78,6 +89,9 @@ function startTimer(){
 }
 
 function getTime(){
+    if(countWords === 0){
+        return 0;
+    }
     return Math.floor((new Date() - startTime) / 1000)
 }
 
@@ -85,7 +99,6 @@ function getTime(){
 //defining main function 
 function startGame() {
     start()
-
 }
 
 

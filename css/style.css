@@ -81,13 +81,11 @@ span {
 }
 
 .correct {
-    background: yellow;
-    color: black;
+    color: greenyellow;
 }
 
 .wrong {
-    background: red;
-    color: black;
+    color: red;
 }
 
 .cursor {
@@ -97,6 +95,7 @@ span {
 
 #timer {
     font-size: 4rem;
+    margin-top: 1rem;
     color: yellow;
     font-weight: 900;
     text-align: center;
