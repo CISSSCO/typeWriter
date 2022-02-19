@@ -2,12 +2,18 @@ let QUOTEAPI = 'http://api.quotable.io/random'
 let displayQuoteInParagraph = document.getElementById('quotes')
 let timer = document.getElementById('timer')
 let inputArea = document.getElementById('textArea')
+let displaywpm = document.getElementById('wpm')
+let displaycpm = document.getElementById('cpm')
+
+
 let startTime
 let endTime = null;
 
 let countWords = 0
 let prevWordTyped = 0
 let noOfchar = 0
+let prevTime = 0
+let charPerMinute = 0
 
 const keyListener = inputArea.addEventListener('input', () => {
 
@@ -42,7 +48,7 @@ const keyListener = inputArea.addEventListener('input', () => {
         start();
         prevWordTyped = countWords
         countWords = 0
-        
+        displaySpeed();
     }
 })
 
@@ -57,6 +63,7 @@ function getQuote() {
 
 async function start() {
     noOfchar = 0
+    prevTime = parseInt(timer.innerText);
     timer.innerText = 0
     let quote = await getQuote()
     displayQuoteInParagraph.innerHTML = ''
@@ -69,9 +76,6 @@ async function start() {
     })
 
     inputArea.value = null
-    
-
-    
     
 }
 
@@ -95,6 +99,14 @@ function getTime(){
     return Math.floor((new Date() - startTime) / 1000)
 }
 
+function displaySpeed(){
+    let minute = prevTime / 60;
+    let 
+    charPerMinute = prevWordTyped / minute
+    displaycpm.innerText = Math.floor(charPerMinute);
+    
+    
+}
 
 //defining main function 
 function startGame() {
