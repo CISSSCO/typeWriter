@@ -6,32 +6,58 @@
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     min-height: 90vh;
     margin: 0;
+    padding:0% 1%;
     background-color: var(--primaryColor);
     color: var(--secondaryColor);
 }
-
+img{
+    width: 2.5vw;
+}
 #main {
     display: flex;
+    align-items: center;
+    margin-top:4%;
+    justify-content: center;
     flex-direction: column;
 }
 
 header {
     display: flex;
-    
+    padding-right:1%;
+    padding-left: 1%;
     align-items: center;
+    width: 100%;
+    height: auto;
 
+}
+#icon{
+    color:#66d45c;
+    flex-grow:1;
+    font-size: 2vw;
 }
 
 #options {
-    margin: 0 2px;
-    padding: 0 2px;
+    font-size:1.3vw;
+    margin: 5px 5px 5px;
+    padding: 7px 14px 7px;
+    border:none;
+    color:#73a960;
+    background:#474743;
+    opacity: 70%;
+    border-radius:5px;
+    margin-left:1%;
+    margin-right: 1.5%;
+    
 }
-
+#options:active{
+    background:#66d45c;
+    color:black;
+}
+#options:hover{
+    color:#66d45c;
+}
 span {
     font-size: 1em;
 }
@@ -50,9 +76,9 @@ span {
 .text {
     color: var(--secondaryColor);
     font-size: 1.5rem;
-    border: 2px solid red;
+    border: 5px solid #66d45c;
     padding: 10px;
-    border-radius: 1rem;
+    border-radius: 2rem;
     margin-bottom: 1rem;
     max-width: 1000px;
     text-align: center;
@@ -63,7 +89,7 @@ span {
 .textarea {
     /* display: none; */
     background-color: transparent;
-    border: 2px solid green;
+    border: 5px solid #66d45c;
     /* resize: none; */
     margin: auto;
     color: white;
@@ -72,12 +98,12 @@ span {
     outline: none;
     width: 300px;
     text-align: center;
-    border-radius: 1rem;
-    height: 4rem;
+    border-radius: 2.5rem;
+    height: 3rem;
 }
 
 .textarea:focus {
-    border-color: yellowgreen;
+    border-color: #66d45c;
 }
 
 .correct {
@@ -96,7 +122,7 @@ span {
 #timer {
     font-size: 4rem;
     margin-top: 1rem;
-    color: yellow;
+    color: #66d45c;
     font-weight: 900;
     text-align: center;
 
