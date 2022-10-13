@@ -6,7 +6,7 @@
 }
 
 body {
-    min-height: 90vh;
+    min-height: 100vh;
     margin: 0;
     padding:0% 1%;
     background-color: var(--primaryColor);
@@ -120,10 +120,10 @@ span {
 }
 
 #timer {
-    font-size: 4rem;
+    font-size: 7rem;
     margin-top: 1rem;
     color: #66d45c;
-    font-weight: 900;
+    font-weight: 100;
     text-align: center;
 
 }
