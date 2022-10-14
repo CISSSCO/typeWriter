@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap');
 * {
     --primaryColor: #161616;
     --secondaryColor: white;
+    --mainColor: #66d45c;
+    --mainColorShadow: #15ff008f;
     font-size: 18px;
     box-sizing: border-box;
 }
@@ -12,13 +15,15 @@ body {
     background-color: var(--primaryColor);
     color: var(--secondaryColor);
 }
+
 img{
     width: 2.5vw;
 }
+
 #main {
     display: flex;
     align-items: center;
-    margin-top:4%;
+    margin-top:1%;
     justify-content: center;
     flex-direction: column;
 }
@@ -33,7 +38,7 @@ header {
 
 }
 #icon{
-    color:#66d45c;
+    color:var(--mainColor);
     flex-grow:1;
     font-size: 2vw;
 }
@@ -43,20 +48,23 @@ header {
     margin: 5px 5px 5px;
     padding: 7px 14px 7px;
     border:none;
-    color:#73a960;
-    background:#474743;
-    opacity: 70%;
-    border-radius:5px;
+    color:var(--mainColor);
+    background:#1616165f;
+    /* opacity: 100%; */
+    border-radius:7px;
     margin-left:1%;
     margin-right: 1.5%;
     
 }
-#options:active{
-    background:#66d45c;
-    color:black;
-}
+
+/* #options:active{
+    background-color: #66d45c;
+} */
+
 #options:hover{
-    color:#66d45c;
+    background:var(--mainColor);
+    font-weight: 700;
+    color: var(--primaryColor);
 }
 span {
     font-size: 1em;
@@ -76,7 +84,8 @@ span {
 .text {
     color: var(--secondaryColor);
     font-size: 1.5rem;
-    border: 5px solid #66d45c;
+    border: 5px solid var(--mainColor);
+    box-shadow: 0px 0px 15px var(--mainColorShadow);
     padding: 10px;
     border-radius: 2rem;
     margin-bottom: 1rem;
@@ -89,7 +98,8 @@ span {
 .textarea {
     /* display: none; */
     background-color: transparent;
-    border: 5px solid #66d45c;
+    border: 5px solid var(--mainColor);
+    box-shadow: 0px 0px 10px var(--mainColorShadow);
     /* resize: none; */
     margin: auto;
     color: white;
@@ -103,7 +113,7 @@ span {
 }
 
 .textarea:focus {
-    border-color: #66d45c;
+    border-color: var(--mainColor);
 }
 
 .correct {
@@ -120,12 +130,12 @@ span {
 }
 
 #timer {
-    font-size: 7rem;
-    margin-top: 1rem;
-    color: #66d45c;
-    font-weight: 100;
+    font-size: 8rem;
+    color: var(--mainColor);
     text-align: center;
-
+    font-family: 'Inter', sans-serif;
+    font-weight: 100;
+    text-shadow: 0px 0px 20px var(--mainColor);
 }
 
 #stats {
