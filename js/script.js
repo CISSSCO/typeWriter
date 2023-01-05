@@ -102,7 +102,7 @@ function getTime(){
 function displaySpeed(){
     let minute = prevTime / 60;
     charPerMinute = prevWordTyped / minute
-    displaycpm.innerText = Math.floor(charPerMinute);
+    displaycpm.innerText = Math.floor(charPerMinute) + " CPM";
     
     
 }
